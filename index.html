@@ -388,7 +388,7 @@
         'privacy.children.title': '5. CHILDREN\'S PRIVACY',
         'privacy.children.desc': 'The App does not knowingly collect any information from children under 13. The App contains no advertisements, in-app purchases, or social features.',
         'privacy.contact.title': '6. CONTACT',
-        'privacy.contact.desc': 'If you have any questions about this Privacy Policy, please contact us at support@earthcore.app.',
+        'privacy.contact.desc': 'If you have any questions about this Privacy Policy, please contact us at woojinim64@gmail.com.',
         'footer': '© 2026 DEPTH. — ALL RIGHTS RESERVED'
       },
       ko: {
@@ -435,7 +435,7 @@
         'privacy.children.title': '5. 어린이 개인정보',
         'privacy.children.desc': '앱은 13세 미만 어린이로부터 정보를 의도적으로 수집하지 않습니다. 앱에는 광고, 인앱 구매 또는 소셜 기능이 없습니다.',
         'privacy.contact.title': '6. 연락처',
-        'privacy.contact.desc': '이 개인정보 처리방침에 대해 질문이 있으시면 support@earthcore.app으로 문의하세요.',
+        'privacy.contact.desc': '이 개인정보 처리방침에 대해 질문이 있으시면 woojinim64@gmail.com으로 문의하세요.',
         'footer': '© 2026 DEPTH. — 모든 권리 보유'
       }
     };
@@ -470,21 +470,6 @@
       localStorage.setItem('depth-lang', lang);
     }
 
-    // Language toggle buttons
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const lang = btn.getAttribute('data-lang');
-          setLanguage(lang);
-        });
-      });
-
-      // Load saved language preference
-      const savedLang = localStorage.getItem('depth-lang');
-      if (savedLang && translations[savedLang]) {
-        setLanguage(savedLang);
-      }
-    });
   </script>
 </head>
 <body>
@@ -569,7 +554,7 @@
         You can also open an issue on our
         <a href="https://github.com/" style="color: var(--green);">GitHub repository</a>.
       </p>
-      <div class="support-email">support@earthcore.app</div>
+      <div class="support-email">woojinim64@gmail.com</div>
     </div>
   </section>
 
@@ -629,6 +614,22 @@
   <footer>
     <p data-i18n="footer">© 2026 DEPTH. — ALL RIGHTS RESERVED</p>
   </footer>
+
+  <script>
+    // Language toggle buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        setLanguage(lang);
+      });
+    });
+
+    // Load saved language preference
+    const savedLang = localStorage.getItem('depth-lang');
+    if (savedLang && translations[savedLang]) {
+      setLanguage(savedLang);
+    }
+  </script>
 
 </body>
 </html>
