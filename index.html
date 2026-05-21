@@ -471,18 +471,20 @@
     }
 
     // Language toggle buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const lang = btn.getAttribute('data-lang');
-        setLanguage(lang);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-lang');
+          setLanguage(lang);
+        });
       });
-    });
 
-    // Load saved language preference
-    const savedLang = localStorage.getItem('depth-lang');
-    if (savedLang && translations[savedLang]) {
-      setLanguage(savedLang);
-    }
+      // Load saved language preference
+      const savedLang = localStorage.getItem('depth-lang');
+      if (savedLang && translations[savedLang]) {
+        setLanguage(savedLang);
+      }
+    });
   </script>
 </head>
 <body>
